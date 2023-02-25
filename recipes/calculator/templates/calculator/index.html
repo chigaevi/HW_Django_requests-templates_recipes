@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты</title>
+</head>
+<body>
+<p style="font-size: 25px"> {{ dish_name }} на {{ servings }} персон(у) </p>
+
+{% for ingredient, amount in recipe.items %}
+<ul> <li>{{ ingredient }}: {{ amount }} </li></ul>
+{% empty %}
+    <p>Такого рецепта не знаю :(</p>
+{% endfor %}
+<br>
+<p>Наши лучшие рецепты</p>
+{% for dish_name in dish_name_list %}
+<a href="/{{dish_name}}">{{dish_name}}</a>
+{% endfor %}
+
+</body>
+</html>
